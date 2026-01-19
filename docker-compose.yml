@@ -1,0 +1,32 @@
+services:
+  victim:
+    build: ./vulnerable-app
+    container_name: victim
+    ports:
+      - "8080:8080"
+    networks:
+      - log4shell
+
+  ldap:
+    build:
+      context: .
+      dockerfile: attacker-server/Dockerfile.ldap
+    container_name: ldap
+    ports:
+      - "1389:1389"
+    networks:
+      - log4shell
+
+  http:
+    build:
+      context: .
+      dockerfile: attacker-server/Dockerfile.http
+    container_name: http
+    ports:
+      - "8888:8888"
+    networks:
+      - log4shell
+
+networks:
+  log4shell:
+    name: log4shell_net
