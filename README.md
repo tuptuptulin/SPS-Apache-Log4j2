@@ -2,7 +2,7 @@
 
 A functional exploit demonstration for the Log4Shell vulnerability in Apache Log4j 2.
 
-**Demo:** [YouTube Link]
+**Demo:** https://www.youtube.com/watch?v=jcXvG78LLfE
 
 ## Background
 
@@ -68,7 +68,7 @@ Attacker                                        Victim (Log4j 2.14.1)
 
 - Docker
 - Docker Compose
-
+- Root access (every command in `run.sh` uses `sudo` or shall be run as root)
 ## Usage
 
 Build and start the environment:
