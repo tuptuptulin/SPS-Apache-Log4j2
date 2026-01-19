@@ -1,0 +1,5 @@
+FROM python:3.9-alpine
+WORKDIR /app
+COPY attacker-server/ldap_server.py .
+EXPOSE 1389
+CMD ["python3", "ldap_server.py", "1389", "http://http:8888/"]
